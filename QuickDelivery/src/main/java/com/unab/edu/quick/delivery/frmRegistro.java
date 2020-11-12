@@ -69,16 +69,16 @@ public class frmRegistro extends javax.swing.JFrame {
         );
 
         lblNombre.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        lblNombre.setText("Nombre:");
+        lblNombre.setText("NOMBRE:");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel3.setText("Apellido:");
+        jLabel3.setText("APELLIDO:");
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel4.setText("Usuario:");
+        jLabel4.setText("USUARIO:");
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel5.setText("Contraseña:");
+        jLabel5.setText("CONTRASEÑA:");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,10 +87,10 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jButton1.setText("Registrar");
+        jButton1.setText("REGISTRAR");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel2.setText("Cargo:");
+        jLabel2.setText("CARGO:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,6 +102,13 @@ public class frmRegistro extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(345, 345, 345))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNombre)
@@ -109,24 +116,14 @@ public class frmRegistro extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(39, 39, 39)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                     .addComponent(jTextField5)
                                     .addComponent(jTextField2)
-                                    .addComponent(jTextField1)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(42, 42, 42)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(192, 192, 192)
                         .addComponent(jButton1)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

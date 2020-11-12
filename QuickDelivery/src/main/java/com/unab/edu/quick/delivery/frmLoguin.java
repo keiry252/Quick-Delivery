@@ -44,20 +44,20 @@ public class frmLoguin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         lblUsuario.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        lblUsuario.setText("Usuario");
+        lblUsuario.setText("USUARIO");
 
         lblContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        lblContraseña.setText("Contraseña");
+        lblContraseña.setText("CONTRASEÑA");
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        btnIngresar.setText("Ingresar");
+        btnIngresar.setText("INGRESAR");
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         jLabel1.setText("WELCOME TO QUICK-DELIVERY");
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel2.setText("Registrate Aqui");
+        jLabel2.setText("REGISTRATE AQUI ");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
