@@ -1,52 +1,67 @@
-create database QuickDelivery;
-Use QuickDelivery;
+create database QuickDeliveryBD;
+use QuickDeliveryBD;
 
-create table Usuarios
-( 
-  idUsuario Int auto_increment Primary Key,
-  NombreUsuario Varchar(50) Not Null,
-  Nombre Varchar(50) Not Null,
-  Apellido Varchar (50) Not Null,
-  Email Varchar (50) Not Null,
-  Contra Varchar(50) Not Null
-);
-
-create table Producto
+Create Table Usuarios
 (
-  idProducto int auto_increment Primary Key,
-  Categoria varchar(50),
-  NombreProducto Varchar(50),
-  Precio decimal
+idUsuario int primary key auto_increment not null,
+nombreU varchar(50) not null,
+apellidoU varchar(50) not null,
+correoU Varchar(50) not null,
+contraU Varchar(50),
+telefonoU Varchar(10) not null,
+direccionU Varchar(500) not null
 );
 
-create table Compra
+Create Table Productos
 (
-idCompra int auto_increment Primary key,
-idProducto int,
-foreign key (idProducto) references Producto(idProducto)
+idProducto int primary key auto_increment not null,
+nombreP varchar (50) not null,
+precioP decimal not null
 );
 
-create table Venta
+Create Table Vendedores 
 (
-idVenta int auto_increment Primary key,
-idProducto int,
-foreign key (idProducto) references Producto(idProducto)
+idVendedor int primary key auto_increment not null,
+idUsuario int not null,
+foreign key (idUsuario) references Usuarios(idUsuario)
 );
 
-create table Cliente
+Create Table Ventas 
 (
-idCliente int auto_increment primary key,
-idCompra int,
-idUsuario int,
-foreign key (idCompra) references Compra(idCompra)
+idVenta int primary key auto_increment not null,
+idVendedor int not null,
+idProducto int not null,
+totalV decimal,
+comisionEnvio decimal,
+fechaVenta Date not null,
+foreign key (idVendedor) references Vendedores(idVendedor),
+foreign key (idProducto) references Productos(idProducto)
+);
+Create Table Clientes 
+(
+idCliente int primary key auto_increment not null,
+idUsuario int not null,
+idCompra int not null,
+foreign key (idUsuario) references Usuarios (idUsuario)
+
+);
+Create Table Compras 
+(
+idCompra int not null primary key auto_increment,
+idVenta int not null,
+idCliente int not null,
+foreign key (idCliente) references Clientes (idCliente),
+foreign key (idVenta) references Ventas (idVenta)
 );
 
-create table Vendedor 
+Create Table Envios 
 (
-idVendedor int auto_increment primary key,
-idCompra int,
-idUsuario int,
-foreign key (idCompra) references Compra(idCompra),
-foreign key (idUsuario) references Usuarios(idUsuario) 
+idEnvio int primary key not null auto_increment,
+idVenta int not null,
+idCliente int not null,
+foreign key (idVenta) references Ventas (idVenta),
+foreign key (idCliente) references Clientes (idCliente)
 );
+-- si sale un error, descomentar lo siguiente y ejecutarlo
+-- alter table Clientes Add foreign key (idCompra) references Compras (idCompra)
 
