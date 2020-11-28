@@ -5,6 +5,8 @@
  */
 package com.unab.edu.quick.delivery;
 
+import com.unab.edu.conexion.conexion;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 /**
@@ -51,6 +53,11 @@ public class frmLoguin extends javax.swing.JFrame {
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         btnIngresar.setText("INGRESAR");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         jLabel1.setText("WELCOME TO QUICK-DELIVERY");
@@ -128,6 +135,10 @@ public class frmLoguin extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
