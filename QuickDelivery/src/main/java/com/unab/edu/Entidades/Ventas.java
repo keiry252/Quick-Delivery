@@ -14,9 +14,10 @@ import lombok.Data;
  */
 @Data
 public class Ventas extends Productos {
-
+    protected int idVenta;
+    protected int idVendedor;
+    protected int idProducto;
     protected double totalV;
     protected double comisionEnvio;
     protected Date fechaVenta;
-
 }

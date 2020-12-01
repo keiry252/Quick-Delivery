@@ -13,6 +13,7 @@ import lombok.Data;
  */
 @Data
 public class Envios {
-
     protected int idEnvio;
+    protected int idVenta;
+    protected int idCliente;
 }

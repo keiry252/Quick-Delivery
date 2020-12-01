@@ -14,8 +14,6 @@ import lombok.Data;
 @Data
 public class Clientes extends Usuarios{
     protected int idCliente;
-    protected int idCompra;
-    
-    
-    
+    protected int idUsuario;
+    protected int idCompra;  
 }
