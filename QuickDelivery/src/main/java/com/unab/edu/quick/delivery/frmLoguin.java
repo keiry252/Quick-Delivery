@@ -7,6 +7,8 @@ package com.unab.edu.quick.delivery;
 
 import com.unab.edu.conexion.conexion;
 import java.sql.Connection;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,12 +17,17 @@ import javax.swing.JOptionPane;
  */
 public class frmLoguin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmLoguin
-     */
+    String valueMember[];
+    int contador = 1;
+
     public frmLoguin() {
         initComponents();
         this.setLocationRelativeTo(null);
+        displayMenber();
+    }
+    
+    public void displayMenber() {
+
     }
 
     /**
@@ -40,6 +47,7 @@ public class frmLoguin extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        cmbUsVen = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +79,8 @@ public class frmLoguin extends javax.swing.JFrame {
             }
         });
 
+        cmbUsVen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -86,7 +96,8 @@ public class frmLoguin extends javax.swing.JFrame {
                     .addComponent(lblUsuario)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtUsuario)
-                    .addComponent(pwContra))
+                    .addComponent(pwContra)
+                    .addComponent(cmbUsVen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(91, 91, 91))
         );
         jPanel1Layout.setVerticalGroup(
@@ -102,11 +113,13 @@ public class frmLoguin extends javax.swing.JFrame {
                 .addComponent(lblContraseña)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pwContra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(cmbUsVen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresar)
                     .addComponent(jLabel2))
-                .addGap(73, 73, 73))
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,12 +145,12 @@ public class frmLoguin extends javax.swing.JFrame {
             regis.setVisible(true);
             this.dispose();
         } else if (opcion == JOptionPane.NO_OPTION) {
-            
+
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -177,6 +190,7 @@ public class frmLoguin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JComboBox<String> cmbUsVen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
