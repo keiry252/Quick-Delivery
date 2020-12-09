@@ -5,6 +5,7 @@
  */
 package com.unab.edu.quick.delivery;
 
+import com.unab.edu.DAO.ClsUsuario;
 import com.unab.edu.conexion.conexion;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -25,8 +26,23 @@ public class frmLoguin extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         displayMenber();
     }
-    
+
     public void displayMenber() {
+//        DefaultComboBoxModel cbdefault = new DefaultComboBoxModel();
+//        clsTipoUsuario ClasetUsuario = new clsTipoUsuario();
+//        ArrayList<Tipo> Usuario = ClasetUsuario.MostrartipoUsuario();
+//        valueMember = new String[Usuario.size() + 1];
+//        String filas[] = new String[3];
+//
+//        cbdefault.addElement("");
+//        for (var IterarDatostUsuario : Usuario) {
+//            filas[0] = String.valueOf(IterarDatostUsuario.getId());
+//            filas[1] = IterarDatostUsuario.getTipoUs();
+//            valueMember[contador] = filas[0];
+//            cbdefault.addElement(filas[1]);
+//            contador++;
+//        }
+//        cmbUsVen.setModel(cbdefault);
 
     }
 
@@ -40,7 +56,7 @@ public class frmLoguin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblUsuario = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         lblContraseña = new javax.swing.JLabel();
         pwContra = new javax.swing.JPasswordField();
@@ -53,8 +69,8 @@ public class frmLoguin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        lblUsuario.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        lblUsuario.setText("USUARIO");
+        lblCorreo.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        lblCorreo.setText("CORREO");
 
         lblContraseña.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         lblContraseña.setText("CONTRASEÑA");
@@ -93,7 +109,7 @@ public class frmLoguin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2))
                     .addComponent(lblContraseña)
-                    .addComponent(lblUsuario)
+                    .addComponent(lblCorreo)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtUsuario)
                     .addComponent(pwContra)
@@ -106,7 +122,7 @@ public class frmLoguin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(26, 26, 26)
-                .addComponent(lblUsuario)
+                .addComponent(lblCorreo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -149,8 +165,41 @@ public class frmLoguin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    public static int enviodedato;
+    public static String enviodenombre;
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        String user = txtUsuario.getText();
+        String pass = pwContra.getText();
+        int opcion = Integer.parseInt(valueMember[cmbUsVen.getSelectedIndex()]);
 
+        if (!user.isEmpty() && !pass.isEmpty()) {
+
+            ClsUsuario Uss = new ClsUsuario();
+            var variablecontenedoraconsultaBd = Uss.Loguin(user, pass, opcion);
+            var variblecontenerdato = Uss.IdUsuario(user, pass, opcion);
+
+            if (variablecontenedoraconsultaBd == true) {
+
+                if (opcion == 1) {
+                    enviodenombre = txtUsuario.getText();
+                    JOptionPane.showMessageDialog(null, "WELCOME ADMIN");
+                    frmMenuPrin Prin = new frmMenuPrin();
+                    Prin.setVisible(true);
+                    this.dispose();
+                } else if (opcion == 2) {
+                    enviodedato = variblecontenerdato;
+                    JOptionPane.showMessageDialog(null, "WELCOME USUARIO");
+                    frmMenuPrin Prin = new frmMenuPrin();
+
+                    Prin.setVisible(true);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Llena los Datos");
+        }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -195,7 +244,7 @@ public class frmLoguin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblContraseña;
-    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblCorreo;
     private javax.swing.JPasswordField pwContra;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
