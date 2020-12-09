@@ -5,7 +5,7 @@
  */
 package com.unab.edu.quick.delivery;
 
-import com.unab.edu.DAO.ClsUsuario;
+import com.unab.edu.DAO.ClsUsuarios;
 import com.unab.edu.conexion.conexion;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -174,7 +174,7 @@ public class frmLoguin extends javax.swing.JFrame {
 
         if (!user.isEmpty() && !pass.isEmpty()) {
 
-            ClsUsuario Uss = new ClsUsuario();
+            ClsUsuarios Uss = new ClsUsuarios();
             var variablecontenedoraconsultaBd = Uss.Loguin(user, pass, opcion);
             var variblecontenerdato = Uss.IdUsuario(user, pass, opcion);
 
